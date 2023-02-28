@@ -8,29 +8,86 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 16px;
     margin: 0;
-    background: linear-gradient(to right top, #0e0e0e );
+    background: linear-gradient(to right top, hsl(46, 95%, 74%) );
     color: #000;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    min-height: 100vh;
+    min-height: 80vh;
 }
 /* -----spesific styling-----*/
-.qa-box{
+.qa_box{
   width: 500px;
   padding: 20px;
   min-height: 100px;
-  background-color: #fff;
+  background-color: rgb(245, 231, 173);
   box-shadow:  0 0 5px 3px rgba(0, 0, 0,0.3);
   border-radius: 15px;
 }
-.qa-header{
+.qa_header{
     background-color: #0b58a7;
     color: #fff;
     display: flex;
     justify-content: space-between;
-    padding: 15px 20px;
+    padding: 20px 20px;
     margin: -20px -20px 20px;
     border-radius: 15px 15px 0 0;
     font-size: 20px;
+}
+
+.qa_set{
+    display: none;
+}
+.qa_set.active{
+    display: block;
+}
+.qa_set h4{
+    margin: 0 015px;
+    font-size: 20px;
+}
+.qa_ans_row{
+    position: relative;
+    margin-bottom: 10px;
+}
+.qa_ans_row input{
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    cursor: pointer;
+}
+.qa_ans_row span{
+    display: block;
+    padding: 8px 15px;
+    background-color: #bad0c9;
+    border-radius: 15px;
+    transition: all 0.4s ease-out;
+}
+.qa_ans_row:hover span{
+    background-color: #9ab5ac;
+}.qa_ans_row input:checked + span{
+    background-color: #ed5a5a;
+}
+.qa_ans_row input[valid]:checked + span{
+    background-color: green;
+    color: #fff;
+}
+.qa_footer{
+    padding: 10px 0 0;
+    text-align: right;
+}
+.btn1{
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: hsl(210, 64%, 52%);
+    color: #fff;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.4s ease-out;
+}
+.btn1:hover{
+    background-color: #0b430b;
 }
